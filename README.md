@@ -3,8 +3,8 @@
 Table of Contents
 =================
 1.  [Tensorflow Basics](#basics)
-2.  [Understanding static and dynamic shapes](#shapes)
-3.  [Broadcasting the good and the ugly](#broadcast)
+2.  [Understanding static and dynamic shapes(图形)](#shapes)
+3.  [Broadcasting(广播) the good and the ugly](#broadcast)
 4.  [Understanding order of execution and control dependencies](#control_deps)
 5.  [Control flow operations: conditionals and loops](#control_flow)
 6.  [Prototyping kernels and advanced visualization with Python ops](#python_ops)
@@ -14,14 +14,14 @@ Table of Contents
 10. [Tensorflow Cookbook](#cookbook)
     - [Beam search](#beam_search)
     - [Merge](#merge)
-    - [Entropy](#entropy)
+    - [Entropy(熵)](#entropy)
     - [Make parallel](#make_parallel)
 
 ## Tensorflow Basics
 <a name="basics"></a>
-The most striking difference between Tensorflow and other numerical computation libraries such as numpy is that operations in Tensorflow are symbolic. This is a powerful concept that allows Tensorflow to do all sort of things (e.g. automatic differentiation) that are not possible with imperative libraries such as numpy. But it also comes at the cost of making it harder to grasp. Our attempt here is demystify Tensorflow and provide some guidelines and best practices for more effective use of Tensorflow.
+The most striking(显著的) difference between Tensorflow and other numerical(数字的) computation libraries such as [numpy](https://github.com/numpy/numpy) is that operations in Tensorflow are symbolic(符号的). This is a powerful concept that allows Tensorflow to do all sort of things(诸如此类东西) (e.g. automatic differentiation(区别)) that are not possible with imperative(命令的) libraries such as numpy. But it also comes at the cost of making it harder to grasp(控制). Our attempt here is demystify(阐明) Tensorflow and provide some guidelines and best practices for more effective(有效的) use of Tensorflow.
 
-Let's start with a simple example, we want to multiply two random matrices. First we look at an implementation done in numpy:
+Let's start with a simple example, we want to multiply(乘) two random matrices. First we look at an implementation done in numpy:
 ```python
 import numpy as np
 
